@@ -4,6 +4,9 @@
     "version": "0.0.2",
     "author": "Joyent (joyent.com)",
     "private": true,
+    "scripts": {
+        "postinstall" : "(cd lib/imgadm && tar -zxvf node_modules.tgz && rm node_modules.tgz)"
+    },
     "dependencies": {
         "assert-plus": "1.0.0",
         "dashdash": "1.14.1",
