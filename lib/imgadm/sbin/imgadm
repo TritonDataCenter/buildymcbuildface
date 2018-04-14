@@ -21,27 +21,20 @@
  *
  * CDDL HEADER END
  *
- * Copyright (c) 2013, Joyent, Inc. All rights reserved.
+ * Copyright (c) 2018, Joyent, Inc. All rights reserved.
  *
  * * *
  * imgadm -- manage images on SmartOS
  */
 
 var cmdln = require('cmdln');
-var onlyif = require('/usr/node/node_modules/onlyif');
 
 var CLI = require('../lib/cli');
 
 
 function main(argv) {
-    onlyif.rootInSmartosGlobal(function (onlyifErr) {
-        if (onlyifErr) {
-            console.error('imgadm: error: cannot run: ' + onlyifErr);
-            process.exit(2);
-        }
-        var cli = new CLI();
-        cmdln.main(cli, {argv: argv, showCode: true});
-    });
+    var cli = new CLI();
+    cmdln.main(cli, {argv: argv, showCode: true});
 }
 
 if (require.main === module) {
