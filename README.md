@@ -98,3 +98,17 @@ in your project.
 ## Does it come with a warranty?
 
 No.
+
+## What's going on with lib/imgadm?
+
+This tool uses imgadm but unfortunately it needs to run on ancient platforms. As
+such, it needs to include imgadm. Even more unfortunately, it's really hard to
+get this to work properly with npm because imgadm ships its node modules in
+smartos-live.git. The current "solution" is to just have
+`lib/imgadm/node_modules.tgz` and have that unpacked via the npm postinstall
+script. With it unpacked in the repo, npm deletes those files which breaks the
+tool.
+
+At some point in the future, it might be nice to pull imgadm out from
+smartos-live and have it be a proper npm module. At that point we could just add
+it to our package.json here and point to a version with these changes.
