@@ -1,0 +1,13 @@
+{
+    "name": "buildymcbuildface",
+    "description": "Triton Image Builder",
+    "version": "0.0.1",
+    "author": "Joyent (joyent.com)",
+    "private": true,
+    "dependencies": {
+        "assert-plus": "1.0.0",
+        "dashdash": "1.14.1",
+        "vasync": "2.2.0"
+    },
+    "license": "MPL-2.0"
+}
